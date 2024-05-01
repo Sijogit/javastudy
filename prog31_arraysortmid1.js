@@ -1,0 +1,26 @@
+//w.a.p to find find search item of 13 from goven array using binary search
+b=[63,6,13,21,2,36,81,97,47]
+b.sort((num1,num2)=>num1-num2)
+//console.log(b);
+searchitem=13
+low=0
+up=b.length-1
+ispresent=false
+count=0
+while(low<=up){
+    count++
+    mid=Math.floor((low+up)/2)
+    if(b[mid]==searchitem){
+        ispresent=true
+        console.log('present');
+        break;   
+     }
+    if(b[mid]>searchitem){
+            up=mid-1
+    }
+    if(b[mid]<searchitem){
+          low=mid+1
+    }
+}
+console.log(count);
+!ispresent&&console.log('notpresent');
